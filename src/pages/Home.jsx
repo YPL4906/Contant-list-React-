@@ -26,15 +26,7 @@ useEffect(() => {
 	return (
 		<div className="text-center mt-5">
 			<NavLink className="btn btn-primary mb-5" to="/create-contact">AddContact</NavLink>
-			{contactos.map((contacto) => {
-				return (
-					<>
-				    <p>{contacto.name}</p> 
-					<p>{contacto.address}</p>
-					</>
-				)
-			})}
-
+			
 			<CardContact/>
 		</div>
 	);
