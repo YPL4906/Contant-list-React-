@@ -3,7 +3,7 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { NavLink } from "react-router-dom";
 import CardContact from "../components/CardContact.jsx";
 import { useEffect, useState } from "react";
-
+import React from "react";
 
 export const Home = () => {
 
@@ -29,7 +29,7 @@ useEffect(() => {
 			{contactos.map((contacto) => {
 				return (
 					<>
-					<p>{contacto.name}</p>
+				    <p>{contacto.name}</p> 
 					<p>{contacto.address}</p>
 					</>
 				)

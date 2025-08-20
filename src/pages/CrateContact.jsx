@@ -2,7 +2,7 @@ import React from "react";
 import LayoutContact from "../components/LayoutContact";
 import { NavLink } from "react-router-dom";
 
-function CreateContact() {
+function CreateContacts() {
     return(
         <div className="w-75 mx-auto">
         <h1 className="text-center ">Add a new contact</h1>
@@ -13,4 +13,4 @@ function CreateContact() {
     )
 }
 
-export default CreateContact
+export default CreateContacts
