@@ -1,7 +1,7 @@
 import React from "react";
 import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaTrash, FaEdit } from "react-icons/fa";
 
-function CardContact({contact}) {
+function CardContact({contact, onDelete}) {
     return (
     <div className="card mb-3 shadow-sm">
       <div className="row g-0 align-items-center">
@@ -16,18 +16,18 @@ function CardContact({contact}) {
 
         <div className="col-md-8">
           <div className="card-body py-2">
-            <h5 className="card-title mb-1">"name"</h5>
+            <h5 className="card-title mb-1">{contact.name}</h5>
             <p className="card-text mb-1">
               <FaMapMarkerAlt className="me-2 text-secondary" />
-              "address"
+              {contact.address}
             </p>
             <p className="card-text mb-1">
               <FaPhone className="me-2 text-secondary" />
-              "phone"
+              {contact.phone}
             </p>
             <p className="card-text mb-0">
               <FaEnvelope className="me-2 text-secondary" />
-              "address"
+              {contact.email}
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ function CardContact({contact}) {
           <button className="btn btn-link text-secondary">
             <FaEdit />
           </button>
-          <button className="btn btn-link text-danger">
+          <button className="btn btn-link text-danger" onClick={() => onDelete(contact.id)} >
             <FaTrash />
           </button>
         </div>
