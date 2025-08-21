@@ -5,13 +5,24 @@ import CardContact from "../components/CardContact.jsx";
 import { useEffect, useState } from "react";
 import React from "react";
 
-//
+
 
 export const Home = () => {
 
 	const [contactos, setContactos] = useState([])
 
 	const { store, dispatch } = useGlobalReducer()
+
+	const createUser = async () => {
+		try {
+			await fetch("https://playground.4geeks.com/contact/agendas/yerico", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" }
+			});
+		} catch (error) {
+			console.error("Error creando agenda:", error);
+		}
+	};
 
 	const getContacts = async () => {
 		const respuesta = await fetch("https://playground.4geeks.com/contact/agendas/yerico/contacts")
@@ -32,7 +43,11 @@ export const Home = () => {
 
 
 	useEffect(() => {
-		getContacts()
+		const iniciarAgenda = async () => {
+			await createUser();
+			await getContacts();
+		};
+		iniciarAgenda();
 	}, [])
 
 
